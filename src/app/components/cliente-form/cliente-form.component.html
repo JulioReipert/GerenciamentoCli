@@ -1,0 +1,25 @@
+<h2>Cadastrar Cliente</h2>
+
+<div *ngIf="mensagemSucesso" style="color:green;">{{ mensagemSucesso }}</div>
+<div *ngIf="mensagemErro" style="color:red;">{{ mensagemErro }}</div>
+
+<form (ngSubmit)="salvar()">
+
+  <label>Nome:</label><br />
+  <input [(ngModel)]="cliente.nome" name="nome" required /><br />
+
+  <label>CPF:</label><br />
+  <input [(ngModel)]="cliente.cpf" name="cpf" required /><br />
+
+  <label>RG:</label><br />
+  <input [(ngModel)]="cliente.rg" name="rg" /><br />
+
+  <label>CNPJ:</label><br />
+  <input [(ngModel)]="cliente.cnpj" name="cnpj" /><br />
+
+  <label>IE:</label><br />
+  <input [(ngModel)]="cliente.ie" name="ie" /><br /><br />
+
+  <button type="submit">Salvar</button>
+
+</form>

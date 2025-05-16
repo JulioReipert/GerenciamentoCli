@@ -1,0 +1,39 @@
+<h2>Cadastro de Clientes</h2>
+
+<form [formGroup]="clienteForm" (ngSubmit)="onSubmit()">
+
+  <label>Nome:</label><br/>
+  <input type="text" formControlName="nome" />
+  <div *ngIf="clienteForm.get('nome')?.invalid && clienteForm.get('nome')?.touched" style="color:red">
+    Nome é obrigatório.
+  </div>
+
+  <br/>
+
+  <label>CPF:</label><br/>
+  <input type="text" formControlName="cpf" maxlength="11" />
+  <div *ngIf="clienteForm.get('cpf')?.invalid && clienteForm.get('cpf')?.touched" style="color:red">
+    CPF inválido ou obrigatório.
+  </div>
+
+  <br/>
+
+  <label>RG:</label><br/>
+  <input type="text" formControlName="rg" />
+  <div *ngIf="clienteForm.get('rg')?.invalid && clienteForm.get('rg')?.touched" style="color:red">
+    RG é obrigatório.
+  </div>
+
+  <br/>
+
+  <label>Email:</label><br/>
+  <input type="email" formControlName="email" />
+  <div *ngIf="clienteForm.get('email')?.invalid && clienteForm.get('email')?.touched" style="color:red">
+    Email inválido ou obrigatório.
+  </div>
+
+  <br/>
+
+  <button type="submit">Salvar Cliente</button>
+
+</form>
